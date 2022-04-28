@@ -1,17 +1,19 @@
 //coleçao dinamica de pares chave/valor
-const produto = new Object
+const produto = new Object //forma de criar objeto atraves do new, o new transofrma uma funcao em funcao construtora e a partir disso ele instancia um objeto
+//meios de atribuir uma chave e seu valor a um objeto
 produto.nome = 'cadeira'
 produto ["marca do produto"] = 'generica'
 produto.preço = 200
 console.log(produto)
 
-delete produto.preço
+delete produto.preço //deleta um atributo especificado do objeto
 console.log(produto)
 
 const carro = {
+    // criando outro objeto e especificando chaves e valores
     modelo : "a4",
     valor : 89000,
-    proprietario:{
+    proprietario:{ // o valor de uma chave pode ser outro objeto
         nome: 'raul',
         idade: 56,
         endereço:{
@@ -19,7 +21,7 @@ const carro = {
             numero:123,
         }
     },
-    condutores:[{
+    condutores:[{ //arrays tambem pode ser valores de uma chave do objeto
         nome:'junior',
         idade:19
     },
@@ -27,7 +29,7 @@ const carro = {
         nome:'ana',
         idade:42
     }],
-    calculaValorSeguro: function(){
+    calculaValorSeguro: function(){ //function tambem é valor de 
         //...
     }
 }

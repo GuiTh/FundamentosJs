@@ -47,5 +47,5 @@ console.log(filha)
 
 // UMA FUNCAO FAMOSA QUE RETORNA OBJETO
 
-const fromJSON = JSON.parse('{"info": "sou um json"}')
+const fromJSON = JSON.parse('{"info": "sou um json"}') //transforma json em um objeto e passa as chaves e o valor dentro do JSON.parse
 console.log(fromJSON.info)
