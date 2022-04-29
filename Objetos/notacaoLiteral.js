@@ -12,7 +12,8 @@ const nomeAttr = 'nota'
 const valorAttr = 7.89
 const objt3 ={}
 
-obj3[nomeAttr] = valorAttr
+objt 
+3[nomeAttr] = valorAttr
 console.log(objt3)
 const objt4 = {[nomeAttr]: valorAttr}
 console.log(objt4)
