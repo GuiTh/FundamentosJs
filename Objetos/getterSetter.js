@@ -25,4 +25,8 @@ let pessoa = {
 // com get eu pego o valor de um atributo, com set eu altero o valor de um atributo
 pessoa.linguagem ="casteliano"
 console.log(pessoa.idioma)
+
 console.log(pessoa)
+
+console.log(pessoa)
+

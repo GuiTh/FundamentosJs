@@ -30,5 +30,3 @@ const obj = Object.assign(dest,o1,o2) // junta os objetos passados como parametr
 console.log(dest)// o primeiro parametro é o destino e os outros a seguir sao os objetos que serao jogados dentro de um unico objeto
 
 Object.freeze(obj) //trava o valor do atributo nao pertimitindo alguem alterar esse valor depois da declaraão do .freeze
-obj.c = 1234
-
