@@ -17,3 +17,20 @@ console.log(filho.attr1,filho.attrA,filho.attr0,filho.attr2,filho.attr3)
 encontra pra depois abranger os outros e acessar 
 outros objetos procurado o prototipo, se nao encontrar ele retorna undefined*/
 
+// exemplo de prototipo mais complexo
+
+const carro = {
+    velAtual: 0,
+    velMax:200,
+    acelerarMais(delta){
+        if (this.velAtual +delta <= this.velMax){
+            this.velAtual += delta
+        }else{
+            this.velAtual = this.velMax
+        }
+    },
+    status(){
+        return `${this.velAtual}Km/g de ${this.velMax}Km/h`
+    }
+}
+
