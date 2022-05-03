@@ -1,5 +1,5 @@
 // cadeia de prototipos (prototype chain)
-Object.prototype.attr0 = 'Z'
+Object.prototype.attr0 = 'Z' // nao é recomendado usar object.prototype
 const avo = {
     attr1:'A' //o prototipo do objeto avo é o Object.prototype porque nao foi alterado
 } 
@@ -30,7 +30,27 @@ const carro = {
         }
     },
     status(){
-        return `${this.velAtual}Km/g de ${this.velMax}Km/h`
+        return `${this.velAtual}Km/g de ${this.velMax}Km/h` //o metodo vai ler a velocidade maxima que esta dentro de ferrari/volvo, nao de carro
+        // a funçao le o valor do atributo onde ela esta sendo usada como prototipo
     }
 }
 
+const ferrari = {
+    modelo:'f40',
+    velMax: 324 //sombreamento ou shadowing, o atributo local sombrea os atributos de escopo mais abrangente
+}
+
+const volto = {
+    modelo: 'v40',
+    status(){
+        return `${this.modelo}: ${super.status()}` //super referencia o prototipo
+    }
+}
+Object.setPrototypeOf(ferrari,carro) //estabeleceu relacao entre o objeto ferrari e o objeto carro, informou para o sistema que a ferrari tem carro como prototipo
+Object.setPrototypeOf(volto,carro)//estabeleceu relacao entre o objeto volvo e o objeto carro, informou para o sistema que o volvo tem carro como prototipo
+//set prototype pede um objeto destino e o objeto que sera usado como prototipo (setprototypeof(destino,prototipo))
+volto.acelerarMais(100)
+console.log(volto.status()) //chama o metodo direto do objeto carro
+
+ferrari.acelerarMais(300)
+console.log(ferrari.status()) //chama o metodo direto do objeto carro
