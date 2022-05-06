@@ -1,7 +1,7 @@
 package main
 
-import 'fmt'
+import "fmt"
 
-func main(){
-	x2 := 42
+func main() {
+	fmt.PrintIn("Hello, World")
 }
