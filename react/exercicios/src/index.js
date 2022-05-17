@@ -12,6 +12,8 @@ import BomDia from './componentes/BomDia'
 //e determinar qual funcao eu queria atravez do Multi(nome dado ao import).BoaTarde/BoaNoite(o nome da funcao que euquero utilizar no momento)
 import Multi from './componentes/Multiplos'
 
+//nao posso alterar o valor de tipo ou nome pois saudacao esta sendo referenciada
+import Saudacao from './componentes/Saudacao'
 ReactDOM.render(<BomDia nome='guilherme' idade='21'/>, document.getElementById('root'))//pegou o root do html
 //passando html como uma funcao no js, nesse caso esta sendo jsx
 //parece que esta escrevendo html mas e javascript que sera transcrito na hora da compilacao
@@ -21,8 +23,7 @@ ReactDOM.render(<BomDia nome='guilherme' idade='21'/>, document.getElementById('
  */
 ReactDOM.render(
     <div>
-        <Multi.BoaTarde nome='ana'/>
-        <Multi.BoaNoite nome='Bia'/>
+        <Saudacao tipo="bom dia" nome="Joao"/>
     </div>,
 document.getElementById('root')
 )
