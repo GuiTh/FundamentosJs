@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom'
 //lembrando qu posso importar um elemento com qualquer nome,. porem coloco algo ludico para manter ordem
 //COMPONENTES NAO PODEM COMECAR COM LETRA MINUSCULA, assim o jsx pode diferenciar um componente meu e uma div padrao
 import BomDia from './componentes/BomDia'
+import Pai from './componentes/pai'
 //desestruturacao
 //BoaTarde foi tirado do desconstruct pois ele foi exportado com default
 //depois que coloquei os 2 componentes como export default eu pude importar com um nome especifico
@@ -21,9 +22,12 @@ ReactDOM.render(<BomDia nome='guilherme' idade='21'/>, document.getElementById('
  * $('<h1>').html('react 2')
  * 
  */
+
+
 ReactDOM.render(
     <div>
-        <Saudacao tipo="bom dia" nome="Joao"/>
+        <Pai  nome="Paulo" sobrenome="Silva"/>
+        {/**VTNC Q TIPO DE COMENTARIO E ESSE */}
     </div>,
 document.getElementById('root')
 )
