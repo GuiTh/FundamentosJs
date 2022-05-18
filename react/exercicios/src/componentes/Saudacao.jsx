@@ -14,7 +14,7 @@ export default class Saudacao extends Component{ //a classe saudacao esta sendo 
         }
     //trabalhando com evento
     setTipo(e){
-      this.setState({tipo: e.target.value})//setState é uma funcao que serve para alterar o estado de algo que voce referencia
+      this.setState({tipo: e.target.value})//setState é uma funcao que serve para alterar o estado de algo que voce referencia, estado = valor
     }
 
 

@@ -15,6 +15,7 @@ import Multi from './componentes/Multiplos'
 
 //nao posso alterar o valor de tipo ou nome pois saudacao esta sendo referenciada
 import Saudacao from './componentes/Saudacao'
+import Filho from './componentes/filho'
 ReactDOM.render(<BomDia nome='guilherme' idade='21'/>, document.getElementById('root'))//pegou o root do html
 //passando html como uma funcao no js, nesse caso esta sendo jsx
 //parece que esta escrevendo html mas e javascript que sera transcrito na hora da compilacao
@@ -26,8 +27,12 @@ ReactDOM.render(<BomDia nome='guilherme' idade='21'/>, document.getElementById('
 
 ReactDOM.render(
     <div>
-        <Pai  nome="Paulo" sobrenome="Silva"/>
-        {/**VTNC Q TIPO DE COMENTARIO E ESSE */}
+        <Pai  nome="Paulo" sobrenome="Silva">
+        <Filho nome="pora" sobrenome="Silva"/>
+        <Filho nome='react' sobrenome='é chato'/>
+        <Filho nome='prefiro' sobrenome="vue"/>
+        </Pai>
+
     </div>,
 document.getElementById('root')
 )

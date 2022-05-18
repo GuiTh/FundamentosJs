@@ -1,14 +1,19 @@
 import React from "react";
-import Filho from './filho'
+import { childrenWithProps } from "../utils/utils";
+
+
 export default props =>
 <div>
 
     <h1>{props.nome} {props.sobrenome}</h1>
     <h2>Filhos</h2>
     <ul>
-        <Filho nome="pedro" sobrenome={props.sobrenome}/> 
-        <Filho {...props}/>  
-        <Filho {...props} nome="Carla"/> 
+        {/*{props.children} *contexto de componente funcional... se fosse em um contexto de classe seria this.props.children */}
+        {/** 
+        {React.cloneElement(props.children, { //nao funciona com mais de um elemento, clona o elemento apontado, pega as propriedades de outro elemento podendo tambem receber seus proprios elementos 
+            ...props, ...props.children.props
+            })}*/}
+    {childrenWithProps(props)}
     </ul>
 </div>
 //No primeiro caso o nome do filho sera igual esta escrito
