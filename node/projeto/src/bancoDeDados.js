@@ -17,3 +17,9 @@ function getProduto(id){ //essa funcao retorna o id dos produtos
 function getProdutos(){ //essa funcao vai retornar apenas os valores dentro do objeto Produtos
     return Object.values(produtos)
 }
+
+module.exports={
+    salvarProduto,
+    getProduto,
+    getProdutos
+}
