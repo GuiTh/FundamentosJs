@@ -3,7 +3,9 @@ const porta = 3003
 const express = require('express')
 const app = express()
 const bancoDeDados = require('./bancoDeDados')
+const bodyParser = require('body-parser')
 
+ app.use(bodyParser.urlencoded({extended:true}))
 
 app.get('/produtos',(req,res,next) =>{ //estou setando a url /produtos para ela enviar o objeto produtos criado
     res.send(bancoDeDados.getProdutos())
@@ -16,11 +18,18 @@ app.get('/produtos/:id',(req,res,next)=>{ //setando a url /produtos/id para ela 
 
 app.post('/produtos',(req,res,next)=>{ //submete os dados e salva o novo produto
     const produto = bancoDeDados.salvarProduto({
-        nome: req.body.name, //ta pasasndo como parametro da funcao um objeto com o nome sendo o valor que veio a partir da requisicao
-        preco:req.body.name //o preço que veio no corpo da requisicao
+        nome: req.body.nome, //ta pasasndo como parametro da funcao um objeto com o nome sendo o valor que veio a partir da requisicao
+        preco:req.body.preco //o preço que veio no corpo da requisicao
     })//e o resultado dessa requisicao esta armazenando na const produto e ela é retornada com o res.send
     res.send(produto) //o objeto produto é convertido pra json e enviado pra web
 })
+
+app.delete('/produtos:id',(req,res,next)=>{
+    const produto = bancoDeDados.excluirProduto(req.params.id)
+    res.send(produto)
+}) 
+
+
 
 app.listen(porta, ()=>{
     console.log(`servidor esta executando na porta ${porta}`)

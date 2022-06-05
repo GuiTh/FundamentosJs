@@ -18,8 +18,16 @@ function getProdutos(){ //essa funcao vai retornar apenas os valores dentro do o
     return Object.values(produtos)
 }
 
+function excluirProduto(id){
+    const produto = produtos[id]
+    delete produtos[id]
+    return produto
+}
+
 module.exports={
     salvarProduto,
     getProduto,
-    getProdutos
+    getProdutos,
+    excluirProduto
 }
+
