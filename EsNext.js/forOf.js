@@ -29,3 +29,8 @@
  for(let [chave,valor]of assuntosAbordados.entries()){
      console.log(chave,valor)
  }
+
+ const s = new Set(['a','b','c'])
+ for (let letra of s){
+     console.log(letra)
+ }
