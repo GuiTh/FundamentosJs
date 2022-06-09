@@ -4,7 +4,7 @@ tecnologias.set('react', {framework:false})
 tecnologias.set('angular',{framework:true})
 
 console.log(tecnologias.react)
-console.log(tecnologias.get('react'.framework))
+console.log(tecnologias.get('react').framework)
 
 const chavesVariadas = new Map([
     [function () {}, 'Funcao'],
@@ -12,8 +12,8 @@ const chavesVariadas = new Map([
     [123, 'numero'],
 ])
 
-chavesVariadas.forEach((vl,ch) =>{
-    console.log(ch,vl)
+chavesVariadas.forEach((valor,chave) =>{
+    console.log(chave,valor)
 })
 
 console.log(chavesVariadas.has(123))
