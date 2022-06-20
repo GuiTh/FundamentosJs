@@ -36,15 +36,18 @@ getTurma('A').then(alunos=>{
         })
     })
 
-    Promise.all([getTurma('A'),getTurma('B'),getTurma('C')])
-    .then(x => console.log(x)) //com essa funcao eu posso passar varias promises de uma vez e quando todas forem resolvidas ai sim ele chama a cadeia dos methodos then
-    .then(alunos => alunos.map(aluno => aluno.nome))
-    .then(nomes => console.log(nomes)) 
-    .catch(e=> console.log(e.message))
-
-getTurma('D').catch(e=> console.log(e.message))
-
 
 //dados convertidos
 
+//como trabalhar com a funcao que retorna um promisse de forma mais assyncrona
+//recurso do ES8 que serve pra simplificar o promisse
+ let obterAlunos = async () =>{
+    const ta = await getTurma('A') //em vez de chamar o then e, atraves dele, ter acesso a turma A, eu chamo o await e o resultado vai ser atribuido ao Ta
+    const tb = await getTurma('B')
+    const tc = await getTurma('C')
+    return [].concat(ta,tb,tc)
+ } //por ter async posso usar await dentro dela
 
+ obterAlunos()
+ .then(alunos => alunos.map(a =>a.nome))
+ .then(nomes =>console.log(nomes))
