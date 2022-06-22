@@ -1,6 +1,6 @@
  
- let p = new Promise(function(cumprirPromessa ){
-    cumprirPromessa(['ana','bia','carlos','daniel'])
+ let p = new Promise(function(resolve){
+    resolve(['ana','bia','carlos','daniel'])
  })
 
 //  p.then(function(valor){
