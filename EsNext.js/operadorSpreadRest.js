@@ -3,7 +3,8 @@
 
 //spread com objeto
 const funcionario = { nome:'maria', salario: 12348.99}
-const clone = {ativo:true, ...funcionario}//nesse exeplo ele clona todos os atribuitos do objeto funcionario e separa os elementos dentro dele mesmo 
+const clone = {ativo:true,
+     ...funcionario}//nesse exeplo ele clona todos os atribuitos do objeto funcionario e separa os elementos dentro dele mesmo 
 console.log(clone)
 
 //usar spread com array
