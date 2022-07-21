@@ -1,0 +1,51 @@
+<h1>projeto</h1>
+<ul class="tree">
+    <li class="backend">
+    Backend
+        <ul>
+            <li class="app">
+                App
+                <ul class="itens-app">
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>Venda.js</li>
+                </ul>
+            </li>
+            <li class="config">
+                Config
+                 <ul class="itens-config">
+                    <li>Banco.js</li>
+                    <li>Rotas.js</li>
+                    <li>Servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+<li class="frontend">
+    Frontend
+        <ul>
+         <li class="public">
+            Public
+                <ul class="itens-public">
+                    <li>App.css</li>
+                    <li>App.js</li>
+                    <li>Index.html</li>
+                 </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<style>
+    .itens-public{
+        display: none;
+    }
+</style>
+<script>
+ let botaoFrontend = document.querySelector('frontend')
+ let botaoConfig = document.querySelector('public')
+ botaoFrontend.addEventListener('click', (e) =>{
+    botaoConfig.style.display = 'block'
+ })
+</script>
