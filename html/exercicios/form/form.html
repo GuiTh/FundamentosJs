@@ -11,6 +11,26 @@
         <input type="radio" name="tipo"value="regular">Regular
         <input type="radio" name="tipo"value="professor">Professor
     </div>
+    <div>
+        <input type="checkbox" name="ativo" >ativo
+    </div>
+
+    <select name="estado" id="">
+        <option value="Ac">Acre</option>
+        <option value="Bh">Bahia</option>
+        <option value="Ce">Ceara</option>
+    </select>
+
+    <select name="Interesses" id="">
+        <option value="Js">Javascript</option>
+        <option value="Java">Java</option>
+        <option value="Php">Php</option>
+        <option value="Python">Python</option>
+        <option value="Go">Go</option>
+        <option value="C">C</option>
+    </select>
+
+    <button>Incluir</button>
     
     </form>
 
@@ -20,7 +40,9 @@
             margin-bottom: 10px;
         }
         /* posso colocar os parametros da tag diretamente pelo css filtrando ainda mais */
-        input[type=radio]{
+        input[type=radio],
+        input[type=checkbox] {
             display: inline;
         }
+
     </style>
