@@ -79,14 +79,42 @@
             elem.style.left = novoInicio + 'px' 
             setTimeout(()=> mover(elem, novoInicio, fim, passo, callback), 7)
         }else{
+            //a funcao callback chama quando o a funcao exibir acaba
             callback()
         }
     }
-const p = document.querySelector('[wm-slider] > p')
-p.style.display = 'block'
-mover(p, 1500, -520, 5, () =>{
-    console.log('terminou')
-})
+// const p = document.querySelector('[wm-slider] > p')
+// p.style.display = 'block'
+// mover(p, 1500, -520, 5, () =>{
+//     console.log('terminou')
+// })
+
+function slider(){
+    //queryselectorall retorna um nodelist que nao é um array
+    const elementos = document.querySelectorAll("[wm-slider] > p")
+    const slides = Array.from(elementos)
+    exibirSlide(slides, slides[0])
+}
+function exibirSlide(slides, slide){
+    slide.style.display = 'block'
+    //innerWidth pega a largura da tela
+    const inicio = innerWidth 
+    //clienteWidth pega a largura do elemento da vez
+    const fim = -slide.clientWidth
+
+    slide.style.left = `${inicio}px`
+
+    mover(slide, inicio, fim, 5, ()=>{
+        //funcao que retorna o proximo slide, ele verifica quantos indices tem e se nao tiver o proximo ele retorna pro primeiro
+        slide.style.display = 'none'
+        exibirSlide(slides, getProximo(slides, slide))
+    })
+    function getProximo(lista, atual){
+        const i = lista.indexOf(atual) + 1
+        return i < lista.length ? lista[1] : lista[0]
+    }
+}
+slider()
 </script>
 
 
