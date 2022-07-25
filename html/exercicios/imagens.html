@@ -43,6 +43,11 @@
 </p>
 
 <style>
+
+    p{
+        position: absolute;
+        display: none;
+    }
     .circular{
         width: 513px;
         background-color: #444;
@@ -63,3 +68,47 @@
     }
 
 </style>
+
+<script>
+    //a funcao mover recebe 5 parametros, o elemento que sera movido, onde ele vai comecar, onde termina, quantos passos ele vai andar, e uma funcao callback pra identificar quando o elemento finalizar e iniciar
+    function mover(elem, inicio, fim, passo, callback){ 
+        //essa constante é o valor de inicio menos a quantidade de passos que ele da
+        const novoInicio = inicio - passo 
+        // se o valor de novo inicio for maior ou igual ao valor ele seta o left para novoInicio e passa novo incio para a funcao mover pra ela ficar sendo chamada
+        if(novoInicio >= fim){
+            elem.style.left = novoInicio + 'px' 
+            setTimeout(()=> mover(elem, novoInicio, fim, passo, callback), 7)
+        }else{
+            callback()
+        }
+    }
+const p = document.querySelector('[wm-slider] > p')
+p.style.display = 'block'
+mover(p, 1500, -520, 5, () =>{
+    console.log('terminou')
+})
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
